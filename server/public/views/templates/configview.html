@@ -6,9 +6,9 @@
 
     <div id="button-container">
         <div class="color-button" ng-repeat="color in settings.colors" ng-style="{background: color}">
-          <select class="colorPick" ng-model="color" ng-change="settings.changeColor($index, color)" ng-options="item for item in settings.colorArray"></select>
-          <!-- <button type="button" name="changeButton" ng-click="settings.changeColor($index, color)">Change</button> -->
-          <button type="button" name="deleteButton" ng-click="settings.removeColor($index)">Remove</button>
+            <label class="colorPickLabel" for="colorPickBlock">Change</label>
+            <select class="colorPick" name="colorPickBlock" ng-model="color" ng-change="settings.changeColor($index, color)" ng-options="item for item in settings.colorArray" value="Change"></select>
+            <button type="button" class="deleteButton" ng-click="settings.removeColor($index)">Remove</button>
         </div>
     </div>
 
