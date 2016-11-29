@@ -1,14 +1,16 @@
 <div class="row">
     <h1>Settings</h1>
-    <label for="colorPick">Add Another Block</label>
-    <select class="colorPick" name="colorPick" ng-model="settings.newColor" ng-options="item for item in settings.colorArray"></select>
-    <button type="button" ng-click="settings.addColor()" name="addButton">Add Color</button>
 
     <div id="button-container">
         <div class="color-button" ng-repeat="color in settings.colors" ng-style="{background: color}">
             <label class="colorPickLabel" for="colorPickBlock">Change</label>
             <select class="colorPick" name="colorPickBlock" ng-model="color" ng-change="settings.changeColor($index, color)" ng-options="item for item in settings.colorArray" value="Change"></select>
             <button type="button" class="deleteButton" ng-click="settings.removeColor($index)">Remove</button>
+        </div>
+        <div class="color-button" id="addBlock">
+          <label class="colorPickLabel" for="colorPickLabel">Add Block</label>
+          <select class="colorPick" name="colorPick" ng-model="settings.newColor" ng-options="item for item in settings.colorArray"></select>
+          <button type="button" id="addButton" ng-click="settings.addColor()" name="addButton">Add Color</button>
         </div>
     </div>
 
