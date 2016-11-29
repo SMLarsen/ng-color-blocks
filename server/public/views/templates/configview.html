@@ -1,5 +1,6 @@
 <div class="row">
   <h1>Settings</h1>
-
-  To Do: UI to add colors to the game.
+  <label for="colorPick">Pick Another Color</label>
+  <select class="colorPick" name="colorPick" ng-model="settings.newColor" ng-options="item for item in settings.colorArray"></select>
+  <button type="button" ng-click="settings.addColor()" name="addButton">Add Color</button>
 </div>
