@@ -8,7 +8,18 @@ colorBlocks.factory('DataFactory', [function() {
 
   return {
     colors: colors,
-    colorArray: colorArray
-  };
+    colorArray: colorArray,
+    addColor: function(color) {
+      colors.push(color);
+    },
+    removeColor: function(index) {
+      console.log('remove', colors[index]);
+      colors.splice(index,1);
+    },
+    changeColor: function(index, color) {
+      console.log('update', index, color);
+      colors[index] = color;
+    }
+};
 
 }]);

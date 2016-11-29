@@ -8,6 +8,16 @@ colorBlocks.controller('SettingsController', ['$scope', 'DataFactory', function(
 
   self.addColor = function() {
     console.log(self.newColor);
-    DataFactory.colors.push(self.newColor);
+    DataFactory.addColor(self.newColor);
   };
+
+  self.removeColor = function(index) {
+    DataFactory.removeColor(index);
+  };
+
+  self.changeColor = function(index, color) {
+    console.log('update');
+    DataFactory.changeColor(index, color);
+  };
+
 }]);
